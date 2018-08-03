@@ -1,4 +1,4 @@
-# MySql数据库——[百科](https://baike.baidu.com/item/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/10991669?fr=aladdin)
+# MySql数据库——[百科](https://baike.baidu.com/item/MySQL数据库/10991669?fr=aladdin)
 
 ## 概述
 
@@ -55,5 +55,11 @@ RDBMS即关系数据库管理系统\(Relational Database Management System\)的�
 * **参照完整性:**
   参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。
 
+## MySQL具体详细教程文档
 
+w3c教程网：[https://www.w3cschool.cn/mysql/mysql-tutorial.html](https://www.w3cschool.cn/mysql/mysql-tutorial.html)
+
+菜鸟教程网：[http://www.runoob.com/mysql/mysql-tutorial.html](http://www.runoob.com/mysql/mysql-tutorial.html)
+
+官网：[https://dev.mysql.com](https://dev.mysql.com)
 
