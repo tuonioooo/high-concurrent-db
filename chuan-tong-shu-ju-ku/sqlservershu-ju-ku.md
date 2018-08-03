@@ -14,5 +14,9 @@
 
 （4）支持对称多处理器结构、存储过程、ODBC，并具有自主的SQL语言。 SQLServer以其内置的数据复制功能、强大的管理工具、与Internet的紧密集成和开放的系统结构为广大的用户、开发人员和系统集成商提供了一个出众的数据库平台。
 
+## 发展来源
+
+SQL Server 是一个关系数据库管理系统。它最初是由Microsoft Sybase 和Ashton-Tate三家公司共同开发的，于1988 年推出了第一个OS/2 版本。在Windows NT 推出后，Microsoft与Sybase 在SQL Server 的开发上就分道扬镳了，Microsoft 将SQL Server 移植到Windows NT系统上，专注于开发推广SQL Server 的Windows NT 版本。Sybase 则较专注于SQL Server在UNIX 操作系统上的应用。
+
 
 
