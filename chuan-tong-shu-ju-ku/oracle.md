@@ -1,4 +1,4 @@
-# Oracle数据库——[百科](https://baike.baidu.com/item/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93/3710800?fr=aladdin)
+# Oracle数据库——[百科](https://baike.baidu.com/item/Oracle数据库/3710800?fr=aladdin)
 
 ## 概述
 
@@ -115,4 +115,12 @@ Navicat for Oracle是一套专为Oracle设计的强大数据库管理及开发�
 警告文件：show parameter background\_dump\_dest---使用共享服务器连接
 
 跟踪文件：show parameter user\_dump\_dest---使用专用服务器连接
+
+
+
+## Oracle具体详细教程文档
+
+Oracle 教程：[https://www.w3cschool.cn/oraclejc/oraclejc-dxgu2qqt.html](https://www.w3cschool.cn/oraclejc/oraclejc-dxgu2qqt.html) 
+
+
 
