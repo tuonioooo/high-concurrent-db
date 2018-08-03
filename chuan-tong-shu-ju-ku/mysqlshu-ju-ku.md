@@ -1,4 +1,4 @@
-# MySql数据库
+# MySql数据库——[百科](https://baike.baidu.com/item/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/10991669?fr=aladdin)
 
 ## 概述
 
