@@ -196,59 +196,38 @@ mysql>Flush privileges;
 
 用下面的命令查看
 
-\[root@ltest ~\]\# mysql                      \#进入mysql命令行
+```
+[root@ltest ~]# mysql               #进入mysql命令行
 
-mysql
-
-&gt;
-
-show master status;          \#显示\(不同主机结果不同\)
+mysql> show master status;          #显示(不同主机结果不同)
 
 +------------------+----------+-------------------+------------------+
 
-\| File \| Position \| Binlog\_Do\_DB \| Binlog\_Ignore\_DB \|
+| File | Position | Binlog_Do_DB | Binlog_Ignore_DB |
 
 +------------------+----------+-------------------+------------------+
 
-\| updatelog.000028 \| 313361 \|db1 \| mysql \|
+| updatelog.000028 | 313361 |db1 | mysql |
 
 +------------------+----------+-------------------+------------------+
 
 （同步之前如果怀疑主从数据不同步可以采取：上面冷备份远程拷贝法或者在从服务器上命行同步方法）
+```
 
 在从服务器执行MySQL命令下：
 
-mysql
-
-&gt;
-
-slave stop；             \#先停止slave服务
-
-mysql
-
-&gt;
-
-CHANGE MASTER TO MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;
-
-\#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
-
-mysql
-
-&gt;
-
-slave start;                      \#启动从服务器同步服务
-
-mysql
-
-&gt;
-
-show slave status/G;
-
-用show slave status/G;看一下从服务器的同步情况
-
-Slave\_IO\_Running: Yes
-
-Slave\_SQL\_Running: Yes
+> mysql&gt; slave stop；             \#先停止slave服务
+>
+> mysql&gt; CHANGE MASTER TO MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;
+>
+> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
+>
+> mysql&gt;slave start;                      \#启动从服务器同步服务  
+> mysql&gt; show slave status/G;
+>
+> 用show slave status/G;看一下从服务器的同步情况  
+> Slave\_IO\_Running: Yes  
+> Slave\_SQL\_Running: Yes
 
 如果都是yes，那代表已经在同步
 
@@ -256,7 +235,7 @@ Slave\_SQL\_Running: Yes
 
 更多详细信息以及参数设置,请参考MySQL 5.0 Manual手册.
 
-4、进行mysql 双向同步配置
+**4、进行mysql 双向同步配置**
 
 a、 先修改原slave 服务器配置
 
