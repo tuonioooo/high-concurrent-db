@@ -147,6 +147,7 @@ Task: Retrieve all pages regarding athletics of Summer Olympic before 1950.
 * 非结构化和不可预知的数据  
 * CAP定理  
 * 高性能，高可用性和可伸缩性
+* 没有复杂关系，join等复杂操作能力较弱
 
 ![](http://www.runoob.com/wp-content/uploads/2013/10/bigdata.png "bigdata")
 
