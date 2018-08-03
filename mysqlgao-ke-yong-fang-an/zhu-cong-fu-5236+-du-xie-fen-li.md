@@ -123,7 +123,7 @@ Welcome to the MySQL monitor. Commands end with ; or /g.
 Your MySQL connection id is 3 to server version: 5.1.50
 Type 'help;' or '/h' for help. Type '/c' to clear the buffer.
 mysql>
- 
+
 mysql> GRANT REPLICATION SLAVE,REPLICATION CLIENT,RELOAD,SUPER ON *.* TO 'replication'@'172.31.70.95' IENTIFIED BY '123456';
 ```
 
@@ -184,11 +184,11 @@ mysql>Flush privileges;
 
 2）装载主服务器数据库:
 
-\[root@erpdemo ~\]\#cd /var/lib/mysql                \#进入数据库库文件主目录
-
-\[root@erpdemo ~\]\#tar -xvf db.tar                 \#解压缩
-
-\[root@erpdemo ~\]\#service mysqld start          \#启动从数据库服务
+```
+[root@erpdemo ~]#cd /var/lib/mysql             #进入数据库库文件主目录
+[root@erpdemo ~]#tar -xvf db.tar               #解压缩
+[root@erpdemo ~]#service mysqld start          #启动从数据库服务
+```
 
 三、查询配置
 
