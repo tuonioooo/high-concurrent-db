@@ -10,3 +10,45 @@ ORACLE数据库系统是美国ORACLE公司（甲骨文）提供的以分布式�
 
 Oracle数据库最新版本为Oracle Database 12c。Oracle数据库12c 引入了一个新的多承租方架构，使用该架构可轻松部署和管理数据库云。此外，一些创新特性可最大限度地提高资源使用率和灵活性，如Oracle Multitenant可快速整合多个数据库，而Automatic Data Optimization和Heat Map能以更高的密度压缩数据和对数据分层。这些独一无二的技术进步再加上在可用性、安全性和大数据支持方面的主要增强，使得Oracle数据库12c 成为私有云和公有云部署的理想平台。
 
+## 支持平台
+
+在2001年发布的Oracle9i之前，甲骨文公司把他们的数据库产品广泛的移植到了不同的平台上。近期，甲骨文公司巩固了一小部分的操作系统平台。
+
+截止至2015年01月，甲骨文公司的Oracle10g/11g/12c支持以下的操作系统和硬件：
+
+ AppleMac OS X Server:PowerPC
+
+
+
+ HPHP-UX:PA-RISC,Itanium
+
+
+
+ HPTru64 UNIX:Alpha
+
+
+
+ HPOpenVMS: Alpha, Itanium
+
+
+
+ IBMAIX5L:IBM POWER
+
+
+
+ IBMz/OS:zSeries
+
+
+
+ Linux:x86,x86-64, PowerPC, zSeries, Itanium
+
+
+
+ MicrosoftWindows: x86, x86-64, Itanium
+
+
+
+ SunSolaris:SPARC, x86, x86-64 \[1\]
+
+
+
