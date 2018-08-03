@@ -8,7 +8,7 @@
   * [SqlServer数据库](chuan-tong-shu-ju-ku/sqlservershu-ju-ku.md)
 * [NOSQL数据库](nosqlshu-ju-ku.md)
 * [MySql高可用方案](mysqlgao-ke-yong-fang-an.md)
-  * 主从复制+读写分离
+  * [主从复制+读写分离](mysqlgao-ke-yong-fang-an/zhu-cong-fu-5236+-du-xie-fen-li.md)
   * Mysql Cluster/集群
   * HeartBeat+双主复制
   * HeartBeat+DRDB+MySQL
