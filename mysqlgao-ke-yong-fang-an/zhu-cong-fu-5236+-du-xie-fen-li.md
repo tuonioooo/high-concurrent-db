@@ -1,4 +1,4 @@
-# Mysql主从复制+读写分离
+# Mysql主从复制实现读写分离
 
 ## 主从复制
 
@@ -334,7 +334,7 @@ c、 测试
 
 2）在erpdemo服务器上进入mysql命令行，用 show slave status；查看
 
-> \[root@ltest ~\]\#mysql     
+> \[root@ltest ~\]\#mysql
 >
 > mysql&gt;SHOW SLAVE STATUS/
 >
