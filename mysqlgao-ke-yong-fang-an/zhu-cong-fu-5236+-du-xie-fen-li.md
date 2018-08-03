@@ -216,16 +216,16 @@ mysql> show master status;          #显示(不同主机结果不同)
 
 在从服务器执行MySQL命令下：
 
-> mysql&gt; slave stop；             \#先停止slave服务
+> mysql&gt; slave stop；             \#先停止slave服务
 >
 > mysql&gt; CHANGE MASTER TO MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;
 >
-> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
+> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
 >
-> mysql&gt;slave start;                      \#启动从服务器同步服务  
+> mysql&gt;slave start;                      \#启动从服务器同步服务  
 > mysql&gt; show slave status/G;
 >
-> 用show slave status/G;看一下从服务器的同步情况  
+> 用show slave status/G;看一下从服务器的同步情况  
 > Slave\_IO\_Running: Yes  
 > Slave\_SQL\_Running: Yes
 
@@ -239,7 +239,7 @@ mysql> show master status;          #显示(不同主机结果不同)
 
 a、 先修改原slave 服务器配置
 
-1）配置原slave服务器/etc/my.cnf文件（红字为添加内容）
+1）配置原slave服务器/etc/my.cnf文件（加粗斜体为添加内容）
 
 | server-id = 2 | 从服务器ID号，不要和主ID相同 |
 | :--- | :--- |
@@ -250,9 +250,9 @@ a、 先修改原slave 服务器配置
 | master-connect-retry=60 | 断点重新连接时间 |
 | replicate-ignore-db=mysql | 屏蔽对mysql库的同步 |
 | replicate-do-db=db1 | 同步数据库名称 |
-| log-bin=/var/log/mysql/updatelog | 设定生成log文件名 |
-| binlog-do-db=db1 | 设置同步数据库名 |
-| binlog-ignore-db=mysql | 避免同步mysql用户配置，以免不必要的麻烦 |
+| _**log-bin=/var/log/mysql/updatelog**_ | _**设定生成log文件名**_ |
+| _**binlog-do-db=db1**_ | _**设置同步数据库名**_ |
+| _**binlog-ignore-db=mysql**_ | _**避免同步mysql用户配置，以免不必要的麻烦**_ |
 
 2）重新启动mysql服务，创建一个同步专用账号
 
