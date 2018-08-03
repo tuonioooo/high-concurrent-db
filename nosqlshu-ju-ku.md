@@ -1,4 +1,4 @@
-[NOSQL数据库](/nosqlshu-ju-ku.md)
+# NOSQL数据库
 
 # NoSQL简介
 
@@ -16,23 +16,15 @@ NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发�
 
 事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：
 
-
-
 **1、A \(Atomicity\) 原子性**
 
 原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。
 
-
-
 比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。
-
-
 
 **2、C \(Consistency\) 一致性**
 
 一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。
-
-
 
 例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。
 
@@ -46,9 +38,6 @@ NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发�
 
 持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。
 
-  
-
-
 ## 分布式系统
 
 分布式系统（distributed system）由多台计算机和通信的软件组件通过计算机网络连接（本地网络或广域网）组成。
@@ -58,9 +47,6 @@ NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发�
 因此，网络和分布式系统之间的区别更多的在于高层软件（特别是操作系统），而不是硬件。
 
 分布式系统可以应用在不同的平台上如：Pc、工作站、局域网和广域网上等。
-
-  
-
 
 ## 分布式计算的优点
 
@@ -92,9 +78,6 @@ NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发�
 
 相较于集中式计算机网络集群可以提供更高的性能（及更好的性价比）。
 
-  
-
-
 ## 分布式计算的缺点
 
 **故障排除：**
@@ -113,9 +96,6 @@ NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发�
 
 开放系统的特性让分布式计算系统存在着数据的安全性和共享的风险等问题。
 
-  
-
-
 ## 什么是NoSQL?
 
 NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。
@@ -127,9 +107,6 @@ NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他�
 今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL数据库的发展也却能很好的处理这些大的数据。
 
 ![](http://www.runoob.com/wp-content/uploads/2013/10/web-data-image.png "web-data-image")
-
-  
-
 
 ## 实例
 
@@ -147,33 +124,31 @@ Wikipedia 页面 :
 Large collection of documents 
 Combination of structured and unstructured data 
 Task: Retrieve all pages regarding athletics of Summer Olympic before 1950.
-
 ```
 
 ## RDBMS vs NoSQL
 
-**RDBMS**  
-- 高度组织化结构化数据  
-- 结构化查询语言（SQL） \(SQL\)  
-- 数据和关系都存储在单独的表中。  
-- 数据操纵语言，数据定义语言  
-- 严格的一致性  
-- 基础事务
+**RDBMS**
 
-**NoSQL**  
-- 代表着不仅仅是SQL  
-- 没有声明性查询语言  
-- 没有预定义的模式  
--键 - 值对存储，列存储，文档存储，图形数据库  
-- 最终一致性，而非ACID属性  
-- 非结构化和不可预知的数据  
-- CAP定理  
-- 高性能，高可用性和可伸缩性
+* 高度组织化结构化数据  
+* 结构化查询语言（SQL） \(SQL\)  
+* 数据和关系都存储在单独的表中。  
+* 数据操纵语言，数据定义语言  
+* 严格的一致性  
+* 基础事务
+
+**NoSQL**
+
+* 代表着不仅仅是SQL  
+* 没有声明性查询语言  
+* 没有预定义的模式  
+  -键 - 值对存储，列存储，文档存储，图形数据库  
+* 最终一致性，而非ACID属性  
+* 非结构化和不可预知的数据  
+* CAP定理  
+* 高性能，高可用性和可伸缩性
 
 ![](http://www.runoob.com/wp-content/uploads/2013/10/bigdata.png "bigdata")
-
-  
-
 
 ## NoSQL 简史
 
@@ -182,8 +157,6 @@ NoSQL一词最早出现于1998年，是Carlo Strozzi开发的一个轻量、开�
 2009年，Last.fm的Johan Oskarsson发起了一次关于分布式开源数据库的讨论\[2\]，来自Rackspace的Eric Evans再次提出了NoSQL的概念，这时的NoSQL主要指非关系型、分布式、不提供ACID的数据库设计模式。
 
 2009年在亚特兰大举行的"no:sql\(east\)"讨论会是一个里程碑，其口号是"select fun, profit from real\_world where relational=false;"。因此，对NoSQL最普遍的解释是"非关联型的"，强调Key-Value Stores和文档数据库的优点，而不是单纯的反对RDBMS。
-
-
 
 ## CAP定理（CAP theorem）
 
@@ -206,27 +179,21 @@ CAP理论的核心是：一个分布式系统不可能同时很好的满足一�
 
 ![](http://www.runoob.com/wp-content/uploads/2013/10/cap-theoram-image.png "cap-theoram-image")
 
-  
-
-
 ## NoSQL的优点/缺点
 
 优点:
 
-* - 高可扩展性
-* - 分布式计算
-* - 低成本
-* - 架构的灵活性，半结构化数据
-* - 没有复杂的关系
+* 高可扩展性
+* 分布式计算
+* 低成本
+* 架构的灵活性，半结构化数据
+* 没有复杂的关系
 
 缺点:
 
-* - 没有标准化
-* - 有限的查询功能（到目前为止）
-* - 最终一致是不直观的程序
-
-  
-
+* 没有标准化
+* 有限的查询功能（到目前为止）
+* 最终一致是不直观的程序
 
 ## BASE
 
@@ -240,9 +207,6 @@ BASE是NoSQL数据库通常对可用性及一致性的弱要求原则:
 * Soft-state --软状态/柔性事务。 "Soft state" 可以理解为"无连接"的, 而 "Hard state" 是"面向连接"的
 * Eventual Consistency -- 最终一致性， 也是是 ACID 的最终目的。
 
-  
-
-
 ## ACID vs BASE
 
 | ACID | BASE |
@@ -252,22 +216,16 @@ BASE是NoSQL数据库通常对可用性及一致性的弱要求原则:
 | 隔离性\(**I**solation\) | 最终一致性 \(**E**ventual consistency\) |
 | 持久性 \(**D**urable\) |  |
 
-  
-
-
 ## NoSQL 数据库分类
 
 | 类型 | 部分代表 | 特点 |
 | :--- | :--- | :--- |
 | 列存储 | HbaseCassandraHypertable | 顾名思义，是按列存储数据的。最大的特点是方便存储结构化和半结构化数据，方便做数据压缩，对针对某一列或者某几列的查询有非常大的IO优势。 |
 | 文档存储 | MongoDB&lt;br/&gt;CouchDB | 文档存储一般用类似json的格式存储，存储的内容是文档型的。这样也就有有机会对某些字段建立索引，实现关系数据库的某些功能。 |
-| key-value存储 | Tokyo Cabinet / TyrantBerkeley DBMemcacheDBRedis | 可以通过key快速查询到其value。一般来说，存储不管value的格式，照单全收。（Redis包含了其他功能） |
+| key-value存储 | Tokyo Cabinet / TyrantBerkeley DBMemcacheDBRedis | 可以通过key快速查询到其value。一般来说，存储不管value的格式，照单全收。（Redis包含了其他功能） |
 | 图存储 | Neo4JFlockDB | 图形关系的最佳存储。使用传统关系数据库来解决的话性能低下，而且设计使用不方便。 |
 | 对象存储 | db4oVersant | 通过类似面向对象语言的语法操作数据库，通过对象的方式存取数据。 |
-| xml数据库 | Berkeley DB XMLBaseX | 高效的存储XML数据，并支持XML的内部查询语法，比如XQuery,Xpath。 |
-
-  
-
+| xml数据库 | Berkeley DB XMLBaseX | 高效的存储XML数据，并支持XML的内部查询语法，比如XQuery,Xpath。 |
 
 ## 谁在使用
 
