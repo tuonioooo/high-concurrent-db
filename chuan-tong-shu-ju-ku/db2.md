@@ -36,3 +36,7 @@ db2支持大二分对象（blob），允许在数据库中存取二进制大对�
 
 （7） 支持数据复制
 
+## DB2教程文档
+
+易百教程：[https://www.yiibai.com/db2/](https://www.yiibai.com/db2/)
+
