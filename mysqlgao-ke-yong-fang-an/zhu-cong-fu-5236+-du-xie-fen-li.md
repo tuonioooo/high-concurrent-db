@@ -258,49 +258,16 @@ a、 先修改原slave 服务器配置
 
 输入密码 ，就进入到mysql命令行中了，一般刚装好的没有密码。
 
-\[root@ltest ~\]\# mysql
-
-Welcome to the MySQL monitor. Commands end with ; or /g.
-
-Your MySQL connection id is 3 to server version: 5.1.50
-
-Type 'help;' or '/h' for help. Type '/c' to clear the buffer.
-
-mysql
-
-&gt;
-
-mysql
-
-&gt;
-
-GRANT REPLICATION SLAVE,REPLICATION CLIENT,RELOAD,SUPER ON \*.\* TO
-
-['replication'@'192.168.1.2'](http://www.cnblogs.com/mailto:)
-
-IDENTIFIED BY '123456';
-
-\#给与从服务器用户replication的同步权限
-
-mysql
-
-&gt;
-
-Grant ALL PRIVILEGES ON \*.\* TO
-
-[li@'%'](mailto:li@)
-
-IDENTIFIED BY '123456';
-
-\#如果需要的话添加管理用户，通过mysql的客户端来测试同步的情况
-
-mysql
-
-&gt;
-
-Flush privileges;
-
-\#刷新权限，使设置生效
+> \[root@ltest ~\]\# mysql  
+> Welcome to the MySQL monitor. Commands end with ; or /g.  
+> Your MySQL connection id is 3 to server version: 5.1.50  
+> Type 'help;' or '/h' for help. Type '/c' to clear the buffer.  
+> mysql&gt;  
+>   
+> mysql&gt; GRANT REPLICATION SLAVE,REPLICATION CLIENT,RELOAD,SUPER ON \*.\* TO ['replication'@'192.168.1.2'](http://www.cnblogs.com/mailto:) IDENTIFIED BY '123456';\#给与从服务器用户replication的同步权限  
+> mysql&gt; Grant ALL PRIVILEGES ON \*.\* TO [li@'%'](mailto:li@) IDENTIFIED BY '123456';\#如果需要的话添加管理用户，通过mysql的客户端来测试同步的情况  
+> mysql&gt;Flush privileges;  
+> \#刷新权限，使设置生效
 
 b、 修改原master主服务器的my.cnf,添加如下内容（红色为添加部分）
 
