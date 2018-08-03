@@ -136,6 +136,7 @@ Task: Retrieve all pages regarding athletics of Summer Olympic before 1950.
 * 数据操纵语言，数据定义语言  
 * 严格的一致性  
 * 基础事务
+* 有join复杂关系操作
 
 **NoSQL**
 
