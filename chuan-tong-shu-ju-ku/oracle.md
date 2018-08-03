@@ -100,3 +100,23 @@ Navicat for Oracle是一套专为Oracle设计的强大数据库管理及开发�
 
 ![](/assets/import-oracle-01.png)
 
+## 文件结构
+
+数据库的物理存储结构是由一些多种物理文件组成，主要有数据文件、控制文件、重做日志文件、归档日志文件、参数文件、口令文件、警告文件等。
+
+控制文件：存储实例、数据文件及日志文件等信息的二进制文件。alter system set control\_files=‘路径’。V$CONTROLFILE。
+
+数据文件：存储数据，以.dbf做后缀。一句话：一个表空间对多个数据文件，一个数据文件只对一个表空间。dba\_data\_files/v$datafile。
+
+日志文件：即Redo Log Files和Archivelog Files。记录数据库修改信息。ALTER SYSTEM SWITCH LOGFILE; 。V$LOG。
+
+参数文件：记录基本参数。spfile和pfile。
+
+警告文件：show parameter background\_dump\_dest---使用共享服务器连接
+
+跟踪文件：show parameter user\_dump\_dest---使用专用服务器连接
+
+
+
+
+
