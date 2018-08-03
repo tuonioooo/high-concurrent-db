@@ -290,63 +290,45 @@ b、 修改原master主服务器的my.cnf,添加如下内容（加粗斜体为�
 
 在erpdemo服务器执行MySQL命令符下：
 
-mysql
-
-&gt;
-
-show master status;
-
-看看有无作为主服务器的信息
-
-+------------------+----------+-------------------+------------------+
-
-\| File \| Position \| Binlog\_Do\_DB \| Binlog\_Ignore\_DB \|
-
-+------------------+----------+-------------------+------------------+
-
-\| updatelog.000028 \| 313361 \|test \| mysql \|
-
-+------------------+----------+-------------------+------------------+
-
-在ltest服务器执行MySQL命令下：
-
-\[root@ltest ~\]\#mysql                           \#进入mysql命令行
-
-mysql
-
-&gt;
-
-slave stop;            \#先停止slave服务
-
-mysql
-
-&gt;
-
-CHANGE MASTER TO MASTER\_HOST='192.168.1.2',MASTER\_USER='replication',MASTER\_PASSWORD='123456',MASTER\_PORT=3306MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;
-
-\#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
-
-mysql
-
-&gt;
-
-slave start;   \#启动从服务器同步服务
+> mysql&gt; show master status;
+>
+>
+>
+> 看看有无作为主服务器的信息
+>
+> +------------------+----------+-------------------+------------------+
+>
+> \| File \| Position \| Binlog\_Do\_DB \| Binlog\_Ignore\_DB \|
+>
+> +------------------+----------+-------------------+------------------+
+>
+> \| updatelog.000028 \| 313361 \|test \| mysql \|
+>
+> +------------------+----------+-------------------+------------------+
+>
+> 在ltest服务器执行MySQL命令下：
+>
+> \[root@ltest ~\]\#mysql                           \#进入mysql命令行
+>
+> mysql&gt; slave stop;            \#先停止slave服务
+>
+> mysql&gt; CHANGE MASTER TO MASTER\_HOST='192.168.1.2',MASTER\_USER='replication',MASTER\_PASSWORD='123456',MASTER\_PORT=3306MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;  
+>   
+> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
+>
+> mysql&gt; slave start;   \#启动从服务器同步服务
 
 c、 测试
 
 1）在ltest服务器上进入mysql命令行
 
-\[root@ltest ~\]\#mysql
-
-mysql
-
-&gt;
-
-SHOW SLAVE STATUS/
-
-Slave\_IO\_Running: Yes
-
-Slave\_SQL\_Running: Yes
+> \[root@ltest ~\]\#mysql     
+>
+> mysql&gt;SHOW SLAVE STATUS/
+>
+> Slave\_IO\_Running: Yes
+>
+> Slave\_SQL\_Running: Yes
 
 此处Slave\_IO\_Running ,Slave\_SQL\_Running 都应该是yes,表示从库的I/O,Slave\_SQL线程都正确开启.
 
