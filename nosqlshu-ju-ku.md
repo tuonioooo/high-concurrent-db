@@ -249,5 +249,5 @@ BASE是NoSQL数据库通常对可用性及一致性的弱要求原则:
 
 
 ## 参考文档
-![](http://www.runoob.com/mongodb/nosql.html)
+[http://www.runoob.com/mongodb/nosql.html](/![])
 
