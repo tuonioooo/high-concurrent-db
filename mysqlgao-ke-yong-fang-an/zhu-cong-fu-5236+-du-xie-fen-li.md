@@ -292,37 +292,35 @@ b、 修改原master主服务器的my.cnf,添加如下内容（加粗斜体为�
 
 > mysql&gt; show master status;
 >
->
->
 > 看看有无作为主服务器的信息
 >
 > +------------------+----------+-------------------+------------------+
 >
-> \| File \| Position \| Binlog\_Do\_DB \| Binlog\_Ignore\_DB \|
+> \| File \| Position \| Binlog\_Do\_DB \| Binlog\_Ignore\_DB \|
 >
 > +------------------+----------+-------------------+------------------+
 >
-> \| updatelog.000028 \| 313361 \|test \| mysql \|
+> \| updatelog.000028 \| 313361 \|test \| mysql \|
 >
 > +------------------+----------+-------------------+------------------+
 >
 > 在ltest服务器执行MySQL命令下：
 >
-> \[root@ltest ~\]\#mysql                           \#进入mysql命令行
+> \[root@ltest ~\]\#mysql                           \#进入mysql命令行
 >
-> mysql&gt; slave stop;            \#先停止slave服务
+> mysql&gt; slave stop;            \#先停止slave服务
 >
 > mysql&gt; CHANGE MASTER TO MASTER\_HOST='192.168.1.2',MASTER\_USER='replication',MASTER\_PASSWORD='123456',MASTER\_PORT=3306MASTER\_LOG\_FILE='updatelog.000028',MASTER\_LOG\_POS=313361;  
 >   
-> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
+> \#根据上面主服务器的show master status的结果，进行从服务器的二进制数据库记录回归，达到同步的效果
 >
-> mysql&gt; slave start;   \#启动从服务器同步服务
+> mysql&gt; slave start;   \#启动从服务器同步服务
 
 c、 测试
 
 1）在ltest服务器上进入mysql命令行
 
-> \[root@ltest ~\]\#mysql     
+> \[root@ltest ~\]\#mysql
 >
 > mysql&gt;SHOW SLAVE STATUS/
 >
@@ -336,19 +334,15 @@ c、 测试
 
 2）在erpdemo服务器上进入mysql命令行，用 show slave status；查看
 
-\[root@ltest ~\]\#mysql
-
-mysql
-
-&gt;
-
-SHOW SLAVE STATUS/
-
-Slave\_IO\_Running: Yes
-
-Slave\_SQL\_Running: Yes
-
-此处Slave\_IO\_Running ,Slave\_SQL\_Running 都应该是yes,表示从库的I/O,Slave\_SQL线程都正确开启.表明数据库正在同步。
+> \[root@ltest ~\]\#mysql     
+>
+> mysql&gt;SHOW SLAVE STATUS/
+>
+> Slave\_IO\_Running: Yes
+>
+> Slave\_SQL\_Running: Yes
+>
+> 此处Slave\_IO\_Running ,Slave\_SQL\_Running 都应该是yes,表示从库的I/O,Slave\_SQL线程都正确开启.表明数据库正在同步。
 
 3）这里我找到了一个mysql的客户端。利用在mysql上建立的管理用户登陆数据库，可以直接在表中写入值，去另一个数据库上看能不能刷新出来，在那里数据库上写入的数据。
 
