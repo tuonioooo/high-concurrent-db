@@ -8,8 +8,6 @@
 >
 > 3.添加管理员：
 >
->
->
 > 使用命令mongo进入命令行 ，创建第一个用户，该用户需要有用户管理权限，这里设置其角色为root
 >
 > &gt; use admin
@@ -45,35 +43,31 @@
 > {
 >
 > user: "runoob",
-
+>
 > pwd:  "runoob",
 >
 > roles: \\[{ role: "dbOwner", db: "runoob" }\\]}
-
+>
 > \)
 >
 > Successfully added user: {
 >
->     "user" : "runoob",
+> "user" : "runoob",
 >
->     "roles" : \\[
-
+>
+>
+> "roles" : \\\[
+>
 > {
 >
->                     "role" : "dbOwner",
-
+>                 "role" : "dbOwner",
+>
 > "db" : "runoob"
 >
+>         }
 >
->
->             }
->
->
->
->     \\]
->
-> }
->
+> \\\]}
+
 > 查看用户
 >
 > use admin
