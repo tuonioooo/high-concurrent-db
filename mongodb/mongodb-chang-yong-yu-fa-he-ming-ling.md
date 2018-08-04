@@ -126,15 +126,19 @@ db.system.users.find\(\)
 >
 > db.createUser\(
 >
->    {
+> {
 >
->     user: "runoob",
+> user: "runoob",
 >
->     pwd:  "runoob",
 >
->     roles: \[ "readWrite", "dbAdmin" \]
 >
->    }
+> pwd:  "runoob",
+>
+>
+>
+> roles: \\[ "readWrite", "dbAdmin" \\]
+>
+> }
 >
 > \)
 
@@ -151,4 +155,6 @@ db.system.users.find\(\)
 > ./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf
 >
 > ./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf --auth
+
+
 
