@@ -250,7 +250,9 @@ hostname=db3
 
 [MySQL基础知识](http://imysql.cn/taxonomy/term/5)
 
-[Cluster/集群](http://imysql.cn/taxonomy/term/22) 
+[Cluster/集群](http://imysql.cn/taxonomy/term/22)
 
-[MySQL 集群](http://imysql.cn/node/96)
+[MySQL 集群](http://imysql.cn/node/96) 
+
+官方网址（非常详细）：[https://dev.mysql.com/doc/refman/5.7/en/mysql-cluster.html](https://dev.mysql.com/doc/refman/5.7/en/mysql-cluster.html)
 
