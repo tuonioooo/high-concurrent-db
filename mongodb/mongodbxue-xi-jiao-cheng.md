@@ -2,14 +2,9 @@
 
 # 参考文档
 
-[http://www.runoob.com/mongodb/mongodb-tutorial.html](http://www.runoob.com/mongodb/mongodb-tutorial.html)
+菜鸟教程：[http://www.runoob.com/mongodb/mongodb-tutorial.html](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 
-   菜鸟教程
-
-  
+官网下载中心：[https://www.mongodb.com/download-center\#atlas](https://www.mongodb.com/download-center#atlas)
 
 
-[https://www.mongodb.com/download-center\#atlas](https://www.mongodb.com/download-center#atlas)
-
-  官网下载中心
 
