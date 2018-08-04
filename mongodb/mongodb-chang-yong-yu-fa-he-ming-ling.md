@@ -60,13 +60,11 @@
 >
 > "role" : "dbOwner",
 >
-> ```
->             "role" : "dbOwner",
-> ```
+>  "role" : "dbOwner",
 >
 > "db" : "runoob"
 >
->     }
+> }
 >
 > \\]}
 >
