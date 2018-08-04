@@ -18,4 +18,5 @@
   * [Lvs+keepalived+双主复制](mysqlgao-ke-yong-fang-an/lvs+keepalivedshuang-zhu-fu-zhi.md)
 * [MongoDB](mongodb.md)
   * [Mongodb学习教程](mongodb/mongodbxue-xi-jiao-cheng.md)
+  * [mongodb配置主从模式](mongodb/mongodbpei-zhi-zhu-cong-mo-shi.md)
 
