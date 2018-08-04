@@ -58,8 +58,23 @@ Successfully added user: {
 
 "roles" : \\[
 
-```
 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,6 +106,22 @@ Successfully added user: {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         "db" : "runoob"
 
 
@@ -107,8 +138,23 @@ Successfully added user: {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-```
 
 \\]
 
@@ -130,11 +176,7 @@ db.system.users.find\(\)
 >
 > user: "runoob",
 >
->
->
 > pwd:  "runoob",
->
->
 >
 > roles: \\[ "readWrite", "dbAdmin" \\]
 >
