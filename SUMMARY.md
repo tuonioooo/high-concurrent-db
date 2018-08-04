@@ -20,4 +20,5 @@
   * [Mongodb学习教程](mongodb/mongodbxue-xi-jiao-cheng.md)
   * [mongodb配置主从模式](mongodb/mongodbpei-zhi-zhu-cong-mo-shi.md)
   * [mongodb.conf配置文件详解](mongodb/mongodbconfpei-zhi-wen-jian-xiang-jie.md)
+  * [Linux下MongoDB安装和配置详解（一）](mongodb/linuxxia-mongodb-an-zhuang-he-pei-zhi-xiang-jie-ff08-yi-ff09.md)
 
