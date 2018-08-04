@@ -30,6 +30,6 @@
     * [Cobar](fen-ku-fen-biao-you-na-xie/cobar.md)
     * [Mycat](fen-ku-fen-biao-you-na-xie/mycat.md)
     * [Sharing Jdbc](fen-ku-fen-biao-you-na-xie/sharing-jdbc.md)
-    * 框架比较
+    * [TDDL、Amoeba、Cobar、MyCAT框架比较](fen-ku-fen-biao-you-na-xie/kuang-jia-bi-jiao.md)
   * [Mycat详解](mycatxiang-jie.md)
 
