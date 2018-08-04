@@ -56,21 +56,9 @@ Successfully added user: {
 
 "user" : "runoob",
 
+"roles" : \\[
 
-
-
-
-
-
-"roles" : \\\[
-
-
-
-
-
-
-
-        {
+    {
 
 
 
@@ -78,7 +66,6 @@ Successfully added user: {
 
 
 
-                "role" : "dbOwner",
 
 
 
@@ -86,7 +73,8 @@ Successfully added user: {
 
 
 
-                "db" : "runoob"
+
+            "role" : "dbOwner",
 
 
 
@@ -94,7 +82,6 @@ Successfully added user: {
 
 
 
-        }
 
 
 
@@ -102,7 +89,26 @@ Successfully added user: {
 
 
 
-\\\]
+
+            "db" : "runoob"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+\\]
 
 }
 
