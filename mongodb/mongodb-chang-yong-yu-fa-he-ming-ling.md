@@ -44,11 +44,7 @@ switched to db runoob
 
 user: "runoob",
 
-
-
 pwd:  "runoob",
-
-
 
 roles: \\[{ role: "dbOwner", db: "runoob" }\\]
 
@@ -58,31 +54,55 @@ roles: \\[{ role: "dbOwner", db: "runoob" }\\]
 
 Successfully added user: {
 
-    "user" : "runoob",
+"user" : "runoob",
 
 
 
-    "roles" : \\[
 
 
 
-            {
+
+"roles" : \\\[
 
 
 
-                    "role" : "dbOwner",
 
 
 
-                    "db" : "runoob"
+
+        {
 
 
 
-            }
 
 
 
-    \\]
+
+                "role" : "dbOwner",
+
+
+
+
+
+
+
+                "db" : "runoob"
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+\\\]
 
 }
 
