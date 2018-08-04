@@ -29,47 +29,43 @@ MySQL Cluster 能够使用多种故障切换和负载平衡选项配置NDB存储
 现在，我们计划建立有5个节点的MySQL CLuster体系，因此需要用到5台机器，分别做如下用途：
 
 ```
-		节点(用途)		IP地址(主机名)
-管理节点(MGM)		192.168.0.1(db1)
-SQL节点1(SQL1)		192.168.0.2(db2)
-SQL节点2(SQL2)		192.168.0.3(db3)
-数据节点1(NDBD1)	192.168.0.4(db4)
-数据节点2(NDBD2)	192.168.0.5(db5)
-
+节点(用途)        IP地址(主机名)
+管理节点(MGM)        192.168.0.1(db1)
+SQL节点1(SQL1)        192.168.0.2(db2)
+SQL节点2(SQL2)        192.168.0.3(db3)
+数据节点1(NDBD1)    192.168.0.4(db4)
+数据节点2(NDBD2)    192.168.0.5(db5)
 ```
 
 2、注意事项及其他  
-每个节点的操作系统都是Linux，下面的描述中将使用主机名，不再使用IP地址来表示。由于MySQL Cluster采用TCP/IP方式连接，并且节点之间的数据传输没有加密，因此这个体系最好只在单独的子网中运行，并且考虑到传输的速率，强烈建议不要跨越公网使用这个体系。所需的MySQL软件请事先在 http://dev.mysql.com/downloads 下载。  
+每个节点的操作系统都是Linux，下面的描述中将使用主机名，不再使用IP地址来表示。由于MySQL Cluster采用TCP/IP方式连接，并且节点之间的数据传输没有加密，因此这个体系最好只在单独的子网中运行，并且考虑到传输的速率，强烈建议不要跨越公网使用这个体系。所需的MySQL软件请事先在 [http://dev.mysql.com/downloads](http://dev.mysql.com/downloads) 下载。  
 实际上整个体系可以在一个单独的实体计算机上运行成功，当然了，必须设定不同的目录以及端口等，只能作为测试时使用。  
 四、开始安装  
 1、假定条件  
 在每个节点计算机上都采用 nobody 用户来运行Cluster，因此执行如下命令添加相关用户（如果已经存在则略过，且用root用户执行）：
 
 ```
-	root# /usr/sbin/groupadd nobody
+root# /usr/sbin/groupadd nobody
 root# /usr/sbin/useradd nobody -g nobody
-
 ```
 
 假设已经下载了mysql可直接使用的二进制安装包，且放在 /tmp 下了。  
 2、SQL节点和存储节点\(NDB节点\)安装\(即4个机器重复执行以下步骤\)
 
 ```
-	root# cd /tmp/
+root# cd /tmp/
 root# tar zxf mysql-max-5.0.24-linux-i686.tar.gz
 root# mv mysql-max-5.0.24-linux-i686 /usr/local/mysql/
 root# cd /usr/local/mysql/
 root# ./configure --prefix=/usr/local/mysql
 root# ./scripts/mysql_install_db
 root# chown -R nobody:nobody /usr/local/mysql/
-
 ```
 
 3、配置SQL节点
 
 ```
-	root# vi /usr/local/mysql/my.cnf
-
+    root# vi /usr/local/mysql/my.cnf
 ```
 
 然后输入如下内容：
@@ -85,14 +81,12 @@ ndbcluster
 ndb-connectstring=db1
 [MYSQL_CLUSTER]
 ndb-connectstring=db1
-
 ```
 
 4、配置存储节点\(NDB节点\)
 
 ```
-	root# vi /usr/local/mysql/my.cnf
-
+root# vi /usr/local/mysql/my.cnf
 ```
 
 然后输入如下内容：
@@ -103,27 +97,24 @@ ndbcluster
 ndb-connectstring=db1
 [MYSQL_CLUSTER]
 ndb-connectstring=db1
-
 ```
 
 5、安装管理节点
 
 ```
-	root# cd /tmp/
+root# cd /tmp/
 root# tar zxf mysql-max-5.0.24-linux-i686.tar.gz
 root# mkdir /usr/local/mysql/
 root# mkdir /usr/local/mysql/data/
 root# cd mysql-max-5.0.24-linux-i686/bin/
 root# cp ndb_mgm* /usr/local/mysql/
 root# chown -R nobody:nobody /usr/local/mysql
-
 ```
 
 6、配置管理节点
 
 ```
-		root# vi /usr/local/mysql/config.ini
-
+ root# vi /usr/local/mysql/config.ini
 ```
 
 然后输入如下内容：
@@ -152,7 +143,6 @@ hostname=db2
 #第二个SQL节点
 [MYSQLD]
 hostname=db3
-
 ```
 
 注释： Cluster管理节点的默认端口是1186，数据节点的默认端口2202。从MySQL 5.0.3开始，该限制已被放宽， Cluster能够根据空闲的端口自动地为数据节点分配端口。如果你的版本低于5.0.22，请注意这个细节。  
@@ -160,56 +150,47 @@ hostname=db3
 较为合理的启动顺序是，首先启动管理节点服务器，然后启动存储节点服务器，最后才启动SQL节点服务器：
 
 * 在管理节点服务器上，执行以下命令启动MGM节点进程：
- 
+
   ```
-  		root# /usr/local/mysql/ndb_mgmd -f /usr/local/mysql/config.ini
-	
+  root# /usr/local/mysql/ndb_mgmd -f /usr/local/mysql/config.ini
   ```
 
   必须用参数“-f”或“--config-file”告诉 ndb\_mgm 配置文件所在位置，默认是在ndb\_mgmd相同目录下。
 
 * 在每台存储节点服务器上，如果是第一次启动ndbd进程的话，必须先执行以下命令：
- 
+
   ```
-  		root# /usr/local/mysql/bin/ndbd --initial
-	
+  root# /usr/local/mysql/bin/ndbd --initial
   ```
 
   注意，仅应在首次启动ndbd时，或在备份/恢复数据或配置文件发生变化后重启ndbd时使用“--initial”参数。因为该参数会使节点删除由早期ndbd实例创建的、用于恢复的任何文件，包括用于恢复的日志文件。  
   如果不是第一次启动，直接运行如下命令即可：
 
   ```
-  		root# /usr/local/mysql/bin/ndbd
-	
+  root# /usr/local/mysql/bin/ndbd
   ```
 
 * 最后，运行以下命令启动SQL节点服务器：
- 
+
   ```
-  		root# /usr/local/mysql/bin/mysqld_safe --defaults-file=/usr/local/mysql/my.cnf 
-  &
+  root# /usr/local/mysql/bin/mysqld_safe --defaults-file=/usr/local/mysql/my.cnf &
   ```
 
   如果一切顺利，也就是启动过程中没有任何错误信息出现，那么就在管理节点服务器上运行如下命令：
 
   ```
-  		root# /usr/local/mysql/ndb_mgm
-  	-- NDB Cluster -- Management Client --
-  	ndb_mgm
-  >
-   SHOW
-  	Connected to Management Server at: localhost:1186
-  	Cluster Configuration
-  	---------------------
-  	[ndbd(NDB)]     2 node(s)
-  	id=2    @192.168.0.4  (Version: 5.0.22, Nodegroup: 0, Master)
-  	id=3    @192.168.0.5  (Version: 5.0.22, Nodegroup: 0)
-  	[ndb_mgmd(MGM)] 1 node(s)
-  	id=1    @192.168.0.1  (Version: 5.0.22)
-  	[mysqld(SQL)]   1 node(s)
-  	id=2   (Version: 5.0.22)
-  	id=3   (Version: 5.0.22)
-	
+   root# /usr/local/mysql/ndb_mgm -- NDB Cluster -- Management Client --ndb_mgm > SHOW
+      Connected to Management Server at: localhost:1186
+      Cluster Configuration
+      ---------------------
+      [ndbd(NDB)]     2 node(s)
+      id=2    @192.168.0.4  (Version: 5.0.22, Nodegroup: 0, Master)
+      id=3    @192.168.0.5  (Version: 5.0.22, Nodegroup: 0)
+      [ndb_mgmd(MGM)] 1 node(s)
+      id=1    @192.168.0.1  (Version: 5.0.22)
+      [mysqld(SQL)]   1 node(s)
+      id=2   (Version: 5.0.22)
+      id=3   (Version: 5.0.22)
   ```
 
 具体的输出内容可能会略有不同，这取决于你所使用的MySQL版本。  
@@ -226,34 +207,19 @@ hostname=db3
 
 ```
 [db2~]root# mysql -uroot test
-[db2~]mysql
->
- create table city(
-[db2~]mysql
->
- id mediumint unsigned not null auto_increment primary key,
-[db2~]mysql
->
- name varchar(20) not null default ''
-[db2~]mysql
->
- ) engine = ndbcluster default charset utf8;
-[db2~]mysql
->
- insert into city values(1, 'city1');
-[db2~]mysql
->
- insert into city values(2, 'city2');
-
+[db2~]mysql> create table city(
+[db2~]mysql> id mediumint unsigned not null auto_increment primary key,
+[db2~]mysql> name varchar(20) not null default ''
+[db2~]mysql> ) engine = ndbcluster default charset utf8;
+[db2~]mysql> insert into city values(1, 'city1');
+[db2~]mysql> insert into city values(2, 'city2');
 ```
 
 在db3上，查询数据：
 
 ```
 [db3~]root# mysql -uroot test
-[db2~]mysql
->
- select * from city;
+[db2~]mysql> select * from city;
 +-----------+
 |id | name  |
 +-----------+
@@ -261,31 +227,26 @@ hostname=db3
 +-----------+
 |2  | city2 |
 +-----------+
-
 ```
 
 七、安全关闭  
 要想关闭 Cluster，可在MGM节点所在的机器上，在Shell中简单地输入下述命令：
 
 ```
-	[db1~]root# /usr/local/mysql/ndb_mgm -e shutdown
-
+    [db1~]root# /usr/local/mysql/ndb_mgm -e shutdown
 ```
 
 运行以下命令关闭SQL节点的mysqld服务：
 
 ```
-	[db2~]root# /usr/local/mysql/bin/mysqladmin -uroot shutdown
-
+    [db2~]root# /usr/local/mysql/bin/mysqladmin -uroot shutdown
 ```
 
 八、其他  
 关于MySQL Cluster更多详细的资料以及备份等请参见MySQL手册的“MySQL Cluster\(MySQL 集群\)”章节。  
-参考资料：《MySQL 5.1 中文手册》  
-  
+参考资料：《MySQL 5.1 中文手册》
 
-
-技术相关: 
+技术相关:
 
 [MySQL基础知识](http://imysql.cn/taxonomy/term/5)
 
