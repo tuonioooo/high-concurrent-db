@@ -250,5 +250,7 @@ hostname=db3
 
 [MySQL基础知识](http://imysql.cn/taxonomy/term/5)
 
-[Cluster/集群](http://imysql.cn/taxonomy/term/22)
+[Cluster/集群](http://imysql.cn/taxonomy/term/22) 
+
+[MySQL 集群](http://imysql.cn/node/96)
 
