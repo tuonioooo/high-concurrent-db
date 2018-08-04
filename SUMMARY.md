@@ -28,7 +28,7 @@
   * [数据切分](shu-ju-qie-fen.md)
   * [分库分表有哪些](fen-ku-fen-biao-you-na-xie.md)
     * [Cobar](fen-ku-fen-biao-you-na-xie/cobar.md)
-    * Mycat
+    * [Mycat](fen-ku-fen-biao-you-na-xie/mycat.md)
     * Sharing Jdbc
     * 框架比较
   * [Mycat详解](mycatxiang-jie.md)
