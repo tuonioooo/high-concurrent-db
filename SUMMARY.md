@@ -14,6 +14,6 @@
     * [示例三](mysqlgao-ke-yong-fang-an/zhu-cong-fu-5236+-du-xie-fen-li/shi-li-san.md)
   * [Mysql Cluster/集群](mysqlgao-ke-yong-fang-an/mysql-clusterji-qun.md)
   * [HeartBeat+双主复制](mysqlgao-ke-yong-fang-an/heartbeatshuang-zhu-fu-zhi.md)
-  * HeartBeat+DRDB+MySQL
+  * [HeartBeat+DRDB+MySQL](mysqlgao-ke-yong-fang-an/heartbeat+drdb+mysql.md)
   * Lvs+keepalived+双主复制
 
