@@ -54,20 +54,22 @@
 >
 > "user" : "runoob",
 >
+> "roles" : \\[
 >
+> {{
 >
-> "roles" : \\\[
+> "role" : "dbOwner",
 >
-> {
->
->                 "role" : "dbOwner",
+> ```
+>             "role" : "dbOwner",
+> ```
 >
 > "db" : "runoob"
 >
->         }
+>     }
 >
-> \\\]}
-
+> \\]}
+>
 > 查看用户
 >
 > use admin
