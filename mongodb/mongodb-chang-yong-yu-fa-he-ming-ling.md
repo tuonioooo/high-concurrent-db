@@ -58,7 +58,8 @@ Successfully added user: {
 
 "roles" : \\[
 
-    {
+```
+{
 
 
 
@@ -74,7 +75,7 @@ Successfully added user: {
 
 
 
-            "role" : "dbOwner",
+        "role" : "dbOwner",
 
 
 
@@ -90,7 +91,7 @@ Successfully added user: {
 
 
 
-            "db" : "runoob"
+        "db" : "runoob"
 
 
 
@@ -106,7 +107,8 @@ Successfully added user: {
 
 
 
-    }
+}
+```
 
 \\]
 
@@ -120,35 +122,33 @@ db.system.users.find\(\)
 
 新建用户 3.0版本以后的语法：
 
-use runoob
-
-db.createUser\(
-
-{
-
-```
-user: "runoob",
-
-pwd:  "runoob",
-
-roles: \[ "readWrite", "dbAdmin" \]
-```
-
-}
-
-\)
+> use runoob
+>
+> db.createUser\(
+>
+>    {
+>
+>     user: "runoob",
+>
+>     pwd:  "runoob",
+>
+>     roles: \[ "readWrite", "dbAdmin" \]
+>
+>    }
+>
+> \)
 
 删除用户：
 
-db.system.users.remove\({user:"java1"}\);
+> db.system.users.remove\({user:"java1"}\);
 
 用户授权验证：
 
-db.auth\('runoob','runoob'\)  //  输出结果1，用户存在，验证成功
+> db.auth\('runoob','runoob'\)  //  输出结果1，用户存在，验证成功
 
 服务器启动命令：
 
-./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf
-
-./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf --auth
+> ./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf
+>
+> ./mongod --config /usr/local/mongodb-linux-x86\_64-rhel62-3.6.5/etc/mongodb.conf --auth
 
